@@ -5,7 +5,7 @@ heslo = "Admin123"
 def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
-        page = browser.new_page
+        page = browser.new_page # chybí závorky
         page.goto("https://souhrada.github.io/playwright-exam/")
         page.fill('input#login', login)
         page.fill('input#pass', heslo)
@@ -21,3 +21,4 @@ if __name__ == "__main__":
     main()
     
     
+
